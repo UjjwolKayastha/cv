@@ -13,7 +13,7 @@
 <main class="sheet">
 
   <header class="header">
-    <a class="download" href="{{ pdfName }}" download>Download PDF</a>
+    <div class="actions"><button type="button" onclick="window.print()">Print</button><a href="{{ pdfName }}" download>Download PDF</a></div>
     <h1>{{ name }}</h1>
     <p class="role">{{ role }} <span class="location">| {{ contact.location }}{% if phone %} | <a href="tel:{{ phone | replace(' ', '') }}">{{ phone }}</a>{% endif %}</span></p>
     <ul class="contact">

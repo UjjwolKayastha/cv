@@ -64,4 +64,6 @@ await browser.close();
 
 const pages = (await readFile(pdfPath)).toString('latin1').match(/\/Type\s*\/Page\b/g)?.length ?? 0;
 if (pages !== EXPECTED_PAGES) throw new Error(`PDF has ${pages} pages, expected ${EXPECTED_PAGES}. Trim cv.yaml or adjust the layout.`);
+const box = (await readFile(pdfPath)).toString('latin1').match(/\/MediaBox\s*\[\s*0 0 ([\d.]+) ([\d.]+)/);
+if (!box || Math.abs(box[1] - 595.28) > 1 || Math.abs(box[2] - 841.89) > 1) throw new Error(`PDF is not A4: ${box?.[1]} x ${box?.[2]} pt`);
 console.log(`Built ${path.relative(root, outDir)}/ (${pages}-page PDF, ${years}+ years)`);

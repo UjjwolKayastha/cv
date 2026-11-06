@@ -43,6 +43,7 @@ await rm(outDir, { recursive: true, force: true });
 await mkdir(path.join(outDir, 'fonts'), { recursive: true });
 await writeFile(path.join(outDir, 'index.html'), html);
 await copyFile(path.join(root, 'template/style.css'), path.join(outDir, 'style.css'));
+for (const icon of ['favicon.ico', 'apple-touch-icon.png']) await copyFile(path.join(root, 'template/icons', icon), path.join(outDir, icon));
 
 const nm = (p) => path.join(root, 'node_modules', p);
 const fonts = Object.fromEntries(['400-normal', '400-italic', '600-normal', '700-normal'].map((v) => [

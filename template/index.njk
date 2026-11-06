@@ -34,6 +34,15 @@
   </section>
 
   <section>
+    <h2>Education</h2>
+    {% for e in education %}
+    <article class="job">
+      <div class="line"><h3>{{ e.degree }} <span class="org">| {{ e.school }}{% if e.via %}, {{ e.via }}{% endif %}{% if e.note %} | {{ e.note }}{% endif %}</span></h3><span class="right">{{ e.year }}</span></div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section>
     <h2>Professional Experience</h2>
 
     <article class="job">
@@ -50,15 +59,6 @@
     <article class="job">
       <div class="line"><h3>{{ t.title }} <span class="org">| {{ t.org }}</span></h3><span class="right">{{ t.dates }}</span></div>
       <ul class="bullets"><li>{{ t.text }}</li></ul>
-    </article>
-    {% endfor %}
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    {% for e in education %}
-    <article class="job">
-      <div class="line"><h3>{{ e.degree }} <span class="org">| {{ e.school }}{% if e.via %}, {{ e.via }}{% endif %}{% if e.note %} | {{ e.note }}{% endif %}</span></h3><span class="right">{{ e.year }}</span></div>
     </article>
     {% endfor %}
   </section>

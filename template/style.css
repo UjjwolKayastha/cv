@@ -31,7 +31,7 @@ h1 { font-size: 29px; font-weight: 700; line-height: 1.1; color: var(--navy); }
 
 /* Sections */
 section { margin-top: 12px; }
-h2 { margin-bottom: 6px; padding-bottom: 2px; font-size: 12.4px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--navy); border-bottom: 1px solid var(--rule); break-after: avoid; }
+h2 { margin-bottom: 6px; padding-bottom: 2px; font-size: 12.4px; font-weight: 700; text-transform: uppercase; color: var(--navy); border-bottom: 1px solid var(--rule); break-after: avoid; }
 h3 { font-size: 12.8px; font-weight: 700; line-height: 1.35; }
 h4 { margin-top: 7px; font-size: 12.8px; font-weight: 400; font-style: italic; color: var(--muted); break-after: avoid; }
 section > h2 + h4 { margin-top: 0; }

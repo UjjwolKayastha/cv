@@ -12,7 +12,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: #fff; }
-body { font: 400 12.8px/1.42 "Source Sans 3", Arial, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+body { font: 400 12.8px/1.42 "Source Sans 3", Arial, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
 ul { list-style: none; }
 a { color: inherit; text-decoration: none; }
 
@@ -59,14 +59,29 @@ article { break-inside: avoid; }
 @page { size: A4; margin: 12mm 15mm; }
 @media print {
   html, body { background: #fff; }
-  .sheet { width: auto; max-width: none; min-height: 0; margin: 0; padding: 0; box-shadow: none; }
+  .sheet { width: auto; max-width: none; height: auto; margin: 0; padding: 0; box-shadow: none; }
+  .sheet:not(:last-child) { break-after: page; }
   .actions { display: none; }
 }
 
-/* On screen: show the CV as an A4 sheet (210mm = 794px wide) */
+/* A new page never starts with a gap */
+@media print, screen and (min-width: 860px) {
+  .sheet > :first-child, .cont > :first-child { margin-top: 0; }
+  .sheet > .cont { margin-top: 0; }
+}
+
+/* On screen: real A4 sheets (210 x 297 mm = 794 x 1123 px) */
 @media screen and (min-width: 860px) {
-  html, body { background: #e9ecef; }
-  .sheet { width: 794px; min-height: 1123px; margin: 28px auto; padding: 45px 57px; background: #fff; box-shadow: 0 1px 3px rgba(31, 41, 51, .12), 0 10px 30px rgba(31, 41, 51, .1); }
+  html, body { background: #e3e6ea; }
+  .pages { padding: 28px 0; }
+  .sheet { width: 794px; height: 1123px; margin: 0 auto; padding: 45px 57px; overflow: hidden; background: #fff; box-shadow: 0 1px 3px rgba(31, 41, 51, .14), 0 10px 30px rgba(31, 41, 51, .12); }
+  .sheet + .sheet { margin-top: 24px; }
+}
+
+/* Narrower screens: the pages read as one continuous document */
+@media screen and (max-width: 859px) {
+  .sheet:not(:last-child) { padding-bottom: 0; }
+  .sheet + .sheet { padding-top: 0; }
 }
 
 /* Small screens */

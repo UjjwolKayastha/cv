@@ -4,7 +4,7 @@
 
 name: Ujjwol Kayastha
 role: Software Engineer & Team Manager
-career_start: 2020-06   # drives the "N+ years" figure in the summary
+career_start: 2019-06   # first role: Teaching Assistant at Softwarica; drives the "N+ years" figure
 
 # {years} is replaced at build time.
 summary: >-

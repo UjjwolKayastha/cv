@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ name }} · CV</title>
+<meta name="description" content="{{ role }}, {{ contact.location }}.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="sheet">
+
+  <header class="header">
+    <a class="download" href="{{ pdfName }}" download>Download PDF</a>
+    <h1>{{ name }}</h1>
+    <p class="role">{{ role }} <span class="location">| {{ contact.location }}{% if phone %} | <a href="tel:{{ phone | replace(' ', '') }}">{{ phone }}</a>{% endif %}</span></p>
+    <ul class="contact">
+      {% for l in contact.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+    </ul>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p>{{ summary }}</p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <dl class="skills">
+      {% for s in skills %}<div><dt>{{ s.label }}:</dt> <dd>{{ s.items }}</dd></div>{% endfor %}
+    </dl>
+  </section>
+
+  <section>
+    <h2>Professional Experience</h2>
+
+    <article class="job">
+      <div class="line"><h3>{{ experience.title }} <span class="org">| {{ experience.org }}</span></h3><span class="right">{{ experience.dates }}</span></div>
+      <ul class="bullets">{% for h in experience.highlights %}<li>{{ h }}</li>{% endfor %}</ul>
+    </article>
+
+    <article class="job">
+      <div class="line"><h3>{{ lecturing.title }} <span class="org">| {{ lecturing.org }}</span></h3><span class="right">{{ lecturing.dates }}</span></div>
+      <ul class="bullets"><li>{{ lecturing.text }}</li></ul>
+    </article>
+
+    {% for t in earlier %}
+    <article class="job">
+      <div class="line"><h3>{{ t.title }} <span class="org">| {{ t.org }}</span></h3><span class="right">{{ t.dates }}</span></div>
+      <ul class="bullets"><li>{{ t.text }}</li></ul>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Key Projects at {{ experience.org }}</h2>
+    {% for g in experience.project_groups %}
+    <h4>{{ g.label }}</h4>
+    {% for p in g.projects %}
+    <article class="project">
+      <div class="line"><h3>{{ p.name }}</h3>{% if p.url %}<a class="right" href="{{ p.url }}">{{ p.url | domain }}</a>{% endif %}</div>
+      <p>{{ p.text }}</p>
+      <p class="tech"><span>Technologies:</span> {{ p.stack }}</p>
+    </article>
+    {% endfor %}
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Independent Products</h2>
+    <p class="intro">{{ products.intro }}</p>
+    {% for p in products.items %}
+    <article class="project">
+      <div class="line"><h3>{{ p.name }} <span class="kind">| {{ p.kind }}</span></h3><a class="right" href="{{ p.url }}">{{ p.url | domain }}</a></div>
+      <p>{{ p.text }}</p>
+      <p class="tech"><span>Technologies:</span> {{ p.stack }}</p>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    {% for e in education %}
+    <article class="job">
+      <div class="line"><h3>{{ e.degree }} <span class="org">| {{ e.school }}{% if e.via %}, {{ e.via }}{% endif %}{% if e.note %} | {{ e.note }}{% endif %}</span></h3><span class="right">{{ e.year }}</span></div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <p class="references">{{ references_note }}</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# CV
+
+Ujjwol Kayastha's CV. One source file, one web page, and a PDF printed from that same page.
+
+- **Edit:** `cv.yaml` (content), `template/` (design)
+- **Build:** `npm ci && npm run build`, output in `dist/`
+- **Deploy:** every push to `main` publishes the page to GitHub Pages and the PDF to the `latest` release
+
+The build fails if the PDF stops being exactly two A4 pages, or if `cv.yaml` contains a phone number.
+
+## Version with a phone number
+
+For direct applications, create a gitignored `private.yaml`:
+
+```yaml
+phone: "+977 ..."
+```
+
+Then run `npm run build:private`. The output goes to the gitignored `private-build/` folder.

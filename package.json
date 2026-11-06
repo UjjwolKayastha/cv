@@ -1,0 +1,15 @@
+{
+  "name": "cv",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:private": "node scripts/build.mjs --private"
+  },
+  "dependencies": {
+    "@fontsource/source-sans-3": "^5.3.1",
+    "nunjucks": "^3.2.4",
+    "playwright": "^1.65.0",
+    "yaml": "^2.9.1"
+  }
+}

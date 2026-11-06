@@ -1,0 +1,76 @@
+@font-face { font-family: "Source Sans 3"; src: url("fonts/source-sans-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/source-sans-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/source-sans-600.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url("fonts/source-sans-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  --ink: #1f2933;
+  --muted: #52606d;
+  --navy: #1b365d;
+  --rule: #1b365d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #fff; }
+body { font: 400 12.8px/1.42 "Source Sans 3", Arial, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+
+.sheet { max-width: 794px; margin: 0 auto; padding: 44px 56px; }
+
+/* Header */
+.header { position: relative; padding-bottom: 2px; }
+h1 { font-size: 29px; font-weight: 700; line-height: 1.1; color: var(--navy); }
+.role { margin-top: 2px; font-size: 15px; font-weight: 600; color: var(--muted); }
+.location { font-weight: 400; }
+.contact { display: flex; flex-wrap: wrap; margin-top: 7px; font-size: 11.8px; color: var(--muted); }
+.contact li + li::before { content: "|"; margin: 0 6px; color: #9aa5b1; }
+.contact a:hover, .right:hover { color: var(--navy); text-decoration: underline; }
+.download { position: absolute; top: 4px; right: 0; padding: 5px 12px; font-size: 12.5px; font-weight: 600; color: var(--navy); border: 1px solid var(--navy); border-radius: 3px; }
+.download:hover { background: var(--navy); color: #fff; }
+
+/* Sections */
+section { margin-top: 12px; }
+h2 { margin-bottom: 6px; padding-bottom: 2px; font-size: 12.4px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--navy); border-bottom: 1px solid var(--rule); break-after: avoid; }
+h3 { font-size: 12.8px; font-weight: 700; line-height: 1.35; }
+h4 { margin-top: 7px; font-size: 12.8px; font-weight: 400; font-style: italic; color: var(--muted); break-after: avoid; }
+section > h2 + h4 { margin-top: 0; }
+.line { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+.right { flex: none; font-size: 12.2px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.org { font-weight: 400; color: var(--muted); }
+.job + .job, h2 + .job { margin-top: 0; }
+.job + .job { margin-top: 5px; }
+.bullets { margin-top: 2px; }
+.bullets li { position: relative; padding-left: 13px; }
+.bullets li::before { content: "•"; position: absolute; left: 2px; color: var(--navy); }
+.project { margin-top: 5px; break-inside: avoid; }
+.kind { font-weight: 400; color: var(--muted); }
+.tech { font-size: 12.2px; color: var(--muted); }
+.tech span { font-weight: 600; }
+.intro { font-style: italic; color: var(--muted); }
+.skills div { margin-top: 1px; }
+.skills dt, .skills dd { display: inline; }
+.skills dt { font-weight: 600; }
+.references { margin-top: 12px; font-style: italic; color: var(--muted); }
+article { break-inside: avoid; }
+
+/* Print: A4 with real margins on every page */
+@page { size: A4; margin: 12mm 15mm; }
+@media print {
+  .sheet { max-width: none; padding: 0; }
+  .download { display: none; }
+}
+
+/* Small screens */
+@media screen and (max-width: 640px) {
+  body { font-size: 15px; }
+  .sheet { padding: 20px 16px 32px; }
+  .download { position: static; display: inline-block; margin-bottom: 14px; }
+  h3, h4 { font-size: 15px; }
+  h2 { font-size: 13.4px; }
+  .role { font-size: 16px; }
+  .contact, .right, .tech { font-size: 14px; }
+  .contact { display: block; }
+  .contact li + li::before { content: none; }
+  .line { flex-direction: column; gap: 0; }
+}

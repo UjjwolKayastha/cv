@@ -1,0 +1,163 @@
+# Single source of truth for the CV. Edit this file, then `npm run build`.
+# Do NOT add a phone number or reference names here: this repo is meant to be public.
+# Phone goes in the gitignored private.yaml (see README).
+
+name: Ujjwol Kayastha
+role: Software Engineer & Team Manager
+career_start: 2020-06   # drives the "N+ years" figure in the summary
+
+# {years} is replaced at build time.
+summary: >-
+  Software Engineer and Team Manager with {years}+ years of experience designing and delivering
+  systems across web, mobile and backend, from database design through to production
+  infrastructure. Leads engineering teams at wesionaryTEAM, builds independent products on Go,
+  Next.js and PostgreSQL, and lectures in web technology and databases at NIST College.
+
+contact:
+  location: Kathmandu, Nepal
+  links:
+    - { label: ujjwolkayastha@gmail.com, url: "mailto:ujjwolkayastha@gmail.com" }
+    - { label: ujjwolkayastha.com.np, url: "https://ujjwolkayastha.com.np/" }
+    - { label: github.com/UjjwolKayastha, url: "https://github.com/UjjwolKayastha" }
+    - { label: linkedin.com/in/ujjwolkayastha, url: "https://www.linkedin.com/in/ujjwolkayastha/" }
+
+experience:
+  org: wesionaryTEAM
+  title: Software Engineer / Team Manager
+  dates: June 2020 – Present
+  highlights:
+    - Lead and mentor a team of software engineers, owning technical direction, system architecture and delivery across client and internal products.
+    - Serve on the core management team, shaping plans and policies, assessing team members and supporting company operations.
+    - Design backend systems and data models for web and real-time applications, turning complex business requirements into scalable solutions.
+    - Build backend services and internal tooling in Go and Python, focused on data processing, automation and reliability.
+    - Own schema design and query optimisation in PostgreSQL and MySQL for analytics, reporting and operational workflows.
+    - Introduced code reviews, sprint planning, retrospectives and task estimation, improving code quality and delivery predictability.
+  project_groups:
+    - label: As Team Lead
+      projects:
+        - name: TsuhanSozai
+          url: https://tsuhan-sozai.com/
+          text: Drop-shipping wholesale e-commerce platform serving multiple online stores. Backend architecture, data design and the APIs behind its admin, customer and analytics apps.
+          stack: Next.js, Go, Python, Postgres, AWS (Lambda, S3, EC2, SQS)
+        - name: Teamplace
+          url: https://www.team-place.com
+          text: Platform for finding and accessing co-working spaces, people, events and passes across Japan.
+          stack: Next.js, Go, MySQL, GCP
+        - name: Question Market
+          url: https://question.market
+          text: Question-and-answer platform for influencers and fans. Designed backend services, APIs and data models for high-traffic interactions.
+          stack: Next.js, Hasura, Supabase, Prisma, Postgres
+        - name: KOL
+          url: https://iproducer.i-collection.net
+          text: Web application connecting social media influencers with product owners.
+          stack: React, Node.js, GraphQL, Postgres
+    - label: As Full-Stack Developer
+      projects:
+        - name: Spomachi
+          text: Connects clubs with sponsors. Designed the database and built the chat system on Firestore and SQL.
+          stack: Next.js, Go
+        - name: Dental CRM
+          text: Mobile app connecting dental doctors with patients.
+          stack: React Native, Go
+        - name: ArtJoint
+          text: Art gallery web application. Built APIs and the frontend integration.
+          stack: React, Redux, Go
+
+products:
+  intro: Own products and independent client work, designed, built and deployed end to end.
+  items:
+    - name: Hamro Bidhyalaya
+      kind: School management
+      url: https://school.sahayatri.app
+      text: One deployment serving many schools, each one’s records sealed off at the database with row-level security. Admissions through to results, with fees, online payment and parent portals.
+      stack: Go, Next.js, Postgres RLS, Prisma, Docker
+    - name: Nilami
+      kind: Auction portal
+      url: https://nilami.sahayatri.app
+      text: Public portal for bank collateral auctions, with a recovery-department dashboard covering the auction lifecycle, bidder records and deposit verification.
+      stack: Go, React, Postgres, Coolify, Oracle VPS, Cloudflare R2
+    - name: The Khoji
+      kind: Local discovery
+      url: https://the-khoji.com
+      text: Nepal’s community-driven platform for finding and reviewing local businesses.
+      stack: Next.js, Supabase, PostGIS
+    - name: Sahayatri
+      kind: Car rental
+      url: https://www.sahayatri.app/
+      text: Chauffeur-driven car rental, with a fleet dashboard for rental businesses and a mobile-first PWA for drivers.
+      stack: Next.js, Supabase, PWA
+    - name: Dheba
+      kind: Personal finance
+      url: https://dheba-paisa.com/en/welcome
+      text: Offline-first ledger in English and Nepali, on Bikram Sambat or Gregorian calendars. Budgets, loans between friends and split trips.
+      stack: Next.js, Supabase
+    - name: Astral World
+      kind: Stock & billing
+      url: https://astralworld.store
+      text: Phone-first stock and billing for a retail shop, with size and colour variants, profit tracking and billing that keeps working offline.
+      stack: Go, React, Coolify, Oracle VPS
+    - name: Himalayan Trekkers Choice
+      kind: Trek booking
+      url: https://himalayantrekkerschoice.com
+      text: Booking site for a Kathmandu trekking outfitter, with routes, elevation profiles and fixed or private departures.
+      stack: Next.js, tRPC
+    - name: Kavre Scrap Yard
+      kind: Scrap collection
+      url: https://kavrescrapyard.com
+      text: Bilingual site with live rates, payout estimates and pickup booking, run from the yard’s own dashboard.
+      stack: Go
+    - name: Nepalogy
+      kind: Commerce & inventory
+      url: https://nepalogyintl.com.np
+      text: E-commerce and inventory platform with quotes over WhatsApp, guest checkout and an admin dashboard.
+      stack: Next.js, Supabase, Drizzle
+
+lecturing:
+  org: NIST College, Banepa
+  title: Part-time Lecturer
+  dates: 2025 – Present
+  text: Teaching Web Technology and Advanced Database (BSc. CSIT) and Database Management Systems (BIM).
+
+earlier:
+  - org: Softwarica College of IT & E-commerce
+    title: Faculty Research Assistant / Teaching Assistant
+    dates: June 2019 – June 2020
+    text: Lab tutoring, academic support and research across Node.js, Python, Android, IoT and drone assembly.
+  - org: Nepal Red Cross Society
+    title: Surveyor, Post Disaster Management
+    dates: 1 month
+    text: Coordinated with the IT team on the survey application, with field data collection and analysis.
+
+skills:
+  - label: Languages
+    items: Go, TypeScript, JavaScript, Python, SQL, Java
+  - label: Web & Mobile
+    items: Next.js, React, React Native, Flutter, Node.js, NestJS, Gin, tRPC, GraphQL, Hasura, Tailwind CSS
+  - label: Data
+    items: PostgreSQL (RLS, PostGIS), MySQL, MongoDB, MSSQL, Supabase, Firebase, Prisma, Drizzle
+  - label: Cloud & DevOps
+    items: AWS (Lambda, S3, EC2, SQS, Cognito), GCP, Oracle VPS, Coolify, Cloudflare R2, Docker, CI/CD
+  - label: Practices
+    items: System and database design, multi-tenant architecture, Agile, technical leadership, mentoring
+
+education:
+  - school: Lincoln University
+    via: Phoenix College of Management
+    degree: Master of Computer Science
+    year: "2024"
+    note: 3.97 CGPA
+  - school: Coventry University
+    via: Softwarica College of IT & E-commerce
+    degree: BSc (Hons) Computing
+    year: "2020"
+    note: 81%, top 1% of the program
+  - school: Tribhuvan University
+    via: Shankar Dev Campus
+    degree: Bachelor in Business Studies
+    year: "2018"
+  - school: St. Xavier’s College
+    degree: +2 Science (HSEB)
+    year: "2012"
+    note: 75%
+
+references_note: References available on request.

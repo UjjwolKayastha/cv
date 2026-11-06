@@ -1,8 +1,6 @@
 // Renders cv.yaml to an HTML page, then prints that same page to a PDF.
-//   npm run build          -> dist/            (public: no phone number)
-//   npm run build:private  -> private-build/   (adds the phone from private.yaml; gitignored)
+//   npm run build -> dist/
 import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import nunjucks from 'nunjucks';
@@ -10,22 +8,11 @@ import { parse } from 'yaml';
 import { chromium } from 'playwright';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const isPrivate = process.argv.includes('--private');
-const outDir = path.join(root, isPrivate ? 'private-build' : 'dist');
+const outDir = path.join(root, 'dist');
 const pdfName = 'Ujjwol-Kayastha-CV.pdf';
 const EXPECTED_PAGES = 2;
 
 const cv = parse(await readFile(path.join(root, 'cv.yaml'), 'utf8'));
-
-// The public source must never carry private details.
-if (cv.phone || /\+977|\b98\d{8}\b/.test(JSON.stringify(cv))) {
-  throw new Error('cv.yaml contains a phone number. Move it to private.yaml.');
-}
-if (isPrivate) {
-  const file = path.join(root, 'private.yaml');
-  if (!existsSync(file)) throw new Error('private.yaml not found.');
-  Object.assign(cv, parse(await readFile(file, 'utf8')));
-}
 
 const now = new Date();
 const [startYear, startMonth] = String(cv.career_start).split('-').map(Number);

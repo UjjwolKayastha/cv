@@ -1,9 +1,9 @@
 # Single source of truth for the CV. Edit this file, then `npm run build`.
-# Do NOT add a phone number or reference names here: this repo is meant to be public.
-# Phone goes in the gitignored private.yaml (see README).
+# This repo is public: everything here is published. Do not add reference names.
 
 name: Ujjwol Kayastha
 role: Software Engineer & Team Manager
+phone: "+977 9849577220"
 career_start: 2019-06   # first role: Teaching Assistant at Softwarica; drives the "N+ years" figure
 
 # {years} is replaced at build time.

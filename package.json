@@ -3,8 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs",
-    "build:private": "node scripts/build.mjs --private"
+    "build": "node scripts/build.mjs"
   },
   "dependencies": {
     "@fontsource/source-sans-3": "^5.3.1",

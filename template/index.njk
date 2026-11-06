@@ -53,6 +53,15 @@
   </section>
 
   <section>
+    <h2>Education</h2>
+    {% for e in education %}
+    <article class="job">
+      <div class="line"><h3>{{ e.degree }} <span class="org">| {{ e.school }}{% if e.via %}, {{ e.via }}{% endif %}{% if e.note %} | {{ e.note }}{% endif %}</span></h3><span class="right">{{ e.year }}</span></div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section>
     <h2>Key Projects at {{ experience.org }}</h2>
     {% for g in experience.project_groups %}
     <h4>{{ g.label }}</h4>
@@ -74,15 +83,6 @@
       <div class="line"><h3>{{ p.name }} <span class="kind">| {{ p.kind }}</span></h3><a class="right" href="{{ p.url }}">{{ p.url | domain }}</a></div>
       <p>{{ p.text }}</p>
       <p class="tech"><span>Technologies:</span> {{ p.stack }}</p>
-    </article>
-    {% endfor %}
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    {% for e in education %}
-    <article class="job">
-      <div class="line"><h3>{{ e.degree }} <span class="org">| {{ e.school }}{% if e.via %}, {{ e.via }}{% endif %}{% if e.note %} | {{ e.note }}{% endif %}</span></h3><span class="right">{{ e.year }}</span></div>
     </article>
     {% endfor %}
   </section>
